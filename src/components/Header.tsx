@@ -3,13 +3,10 @@
 import { useState } from "react";
 import Image from "next/image";
 import { Moon, Sun } from "lucide-react";
+import { useTheme } from "@/context/ThemeContext";
 
-interface HeaderProps {
-  isDarkMode: boolean;
-  toggleDarkMode: () => void;
-}
-
-export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
+export default function Header() {
+  const { isDarkMode, toggleDarkMode } = useTheme();
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -57,7 +54,10 @@ export default function Header({ isDarkMode, toggleDarkMode }: HeaderProps) {
         <div className="flex items-center space-x-4">
           {/* Dark Mode Toggle */}
           <button
-            onClick={toggleDarkMode}
+            onClick={() => {
+              console.log("Toggle button clicked");
+              toggleDarkMode();
+            }}
             className="p-2 rounded-full hover:bg-gray-200 dark:hover:bg-gray-700"
             aria-label="Toggle dark mode"
           >
