@@ -122,8 +122,8 @@ export default function WhyChooseUs() {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.2 }}
           >
-            We've helped thousands of businesses recover millions in software
-            costs. Here's why companies trust us.
+            We&apos;ve helped thousands of businesses recover millions in
+            software costs. Here&apos;s why companies trust us.
           </motion.p>
         </div>
 
